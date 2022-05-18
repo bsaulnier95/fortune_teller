@@ -16,7 +16,7 @@ def start_reading
     ask_name
     ask_age
     ask_color
-    
+    fortune 
 end
 
 def ask_name
@@ -41,8 +41,6 @@ def death_age
     @death_age = @age.to_i + rand(1..60)
 end
 
-
-
 def ask_color
     puts "What is your favorite color? Please choose a number.\n"
     prompt = @@colors.each do |color|
@@ -51,33 +49,40 @@ def ask_color
     prompt
     print ">"
     @fav_color = gets.to_i
+
+
+    
+    loop do
+        user_response = @fav_color
+        if user_response < 1 || user_response >= 5 || user_response.nil?
+            puts "Please enter a valid response"
+            print ">"
+            @fav_color = gets.to_i
+        end
+
+    end
 end
 
 def money_left
+
     x = @fav_color
     @money_left = @@money.each do |v, k|
-        if 
-
-=begin
-def color_response
-    print ">"
-    @fav_color = gets.chomp.to_i
-
-    @color_response = @@money.each do |k, v|
-        if @fav_color.include?(k)
-            return value
-        else 
-            print "Please enter valid response."
-            print ">"
-            @fav_color = gets.chomp.to_i
+        if x == v
+            puts k
+        else
+            "Error"
         end
+        puts @money_left
     end
 end
-=end
+
+
+
 
 end
 
 
 FortuneTeller.new.start_reading
 
-puts 
+
+
