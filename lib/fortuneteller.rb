@@ -1,4 +1,3 @@
-require 'byebug'
 class FortuneTeller
     
  
@@ -29,6 +28,10 @@ def ask_name
     puts "What is your name?"
     print ">"
     @name = gets.capitalize.chomp
+    if @name == "Jaime"
+        print "You're going to die soon"
+    exit
+    end
 end
 def children_left
     kids = ["3", "1", "2","4","6", "10", "15", "12", "9", "17"]
