@@ -25,7 +25,7 @@ end
 
 #name determines children left
 def ask_name
-    puts "What is your name?"
+    puts "What is your first name?"
     print ">"
     @name = gets.capitalize.chomp
     if @name == "Jaime"
@@ -34,7 +34,7 @@ def ask_name
     end
 end
 def children_left
-    kids = ["3", "1", "2","4","6", "10", "15", "12", "9", "17"]
+    kids = ["3", "1", "2","4","6", "10", "15", "12", "9", "17", "32", "99", "353"]
     x = @name.length
     @children_left = kids[x]
 end
