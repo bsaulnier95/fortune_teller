@@ -1,6 +1,6 @@
 require 'byebug'
 class FortuneTeller
-    attr_accessor :name, :age, :fav_color
+    
  
 @@colors = ["1. Red", "2. Blue","3. Organge","4. Green"]
 
@@ -49,32 +49,27 @@ end
 #favorite color determines money left in bank
 def ask_color
     puts "What is your favorite color? Please choose a number.\n"
+    sleep(2)
     prompt = @@colors.each do |color|
         puts "#{color}"
     end
-    prompt
-    print ">"
-    @fav_color = gets.to_i
-end
 
-=begin
     loop do
-        user_response = @fav_color
-        if user_response < 1 || user_response >= 5 || user_response.nil?
+        prompt
+        print ">"
+        @fav_color = gets.to_i
+        if @fav_color < 1 || @fav_color >= 5 || @fav_color.nil?
             puts "Please enter a valid response"
-            print ">"
-            user_response = gets.to_i@
-            fav_color = user_response
-
+        elsif @fav_color > 0 && @fav_color < 5
+            break
         end
     end
-=end
 
+end
 def money_left
     x = @fav_color
     money_left = @@money.each do |v, k|
         if x == v
-            puts k
             @money_left = k
         end
     end
@@ -83,13 +78,10 @@ end
 
 
 def fortune
-   print "#{@name}, you will die at #{@death_age}, leaving behind #{@children_left} children with #{@money_left} in the bank"
+   print "#{@name}, you will die at #{@death_age} leaving behind #{@children_left} children with #{@money_left} in the bank."
 end
 
 end
 
 
-
-
-FortuneTeller.new.reading
 
